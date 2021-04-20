@@ -15,13 +15,6 @@ Swagger(app)
 pickle_in = open('linreg.pkl', 'rb')
 linreg = pickle.load(pickle_in)
 
-
-#Launching welcome page
-@app.route('/')
-def Welcome():
-   return "welcome all"
-
-
 #creating prediction function for salary
 @app.route('/predict')
 def predictSalary():
@@ -51,7 +44,7 @@ def predictSalary():
 @app.route('/predict_file',methods = ["POST"])
 def predictFile():
 
-    '''API to predict salary based on number of experience years
+    '''API to predict salary based on iput csv file containing years of experience
     ---
     parameters:
         - name: file
